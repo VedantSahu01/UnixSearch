@@ -1,0 +1,28 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-name: docker-cluster
+      cluster-nodes: localhost:9200
+      repositories.enabled: true
+      password: changeme
+
+logging:
+  level:
+    org:
+      springframework: DEBUG
+
+download:
+  stax:
+    url: https://archive.org/download/stackexchange/unix.stackexchange.com.7z
+  wiki:
+    url: https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-abstract.xml.gz
+
+location:
+  source:
+    directory: /downloads/
+    staxFile: unix_stackexchange.7z
+    wikiFile: test_wiki.xml.gz
+  destination:
+    directory: /downloads/
+    staxFile: unix_stackexchange.xml
+    wikiFile: unix_wiki.xml
